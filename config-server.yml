@@ -1,0 +1,33 @@
+spring:
+  profiles:
+    active: dev
+
+---
+spring:
+  application:
+    name: spring-cloud-dept-dev
+  config:
+    activate:
+      on-profile: dev
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+
+server:
+  port: 8081
+---
+spring:
+  application:
+    name: spring-cloud-dept-test
+  config:
+    activate:
+      on-profile: test
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+server:
+  port: 8088
